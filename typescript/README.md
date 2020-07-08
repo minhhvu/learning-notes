@@ -14,14 +14,16 @@ Be used to develop JS app for both cient-side and server-side. It can be invoked
 
 # Type system
 
- #High levels
+ ##High levels
  - Program
  - Module
+ 
  ##Custom types
  - Interface
  - Class
  - Function
  - Enumeration
+ 
  ##Primitive types
  - number
  - boolean
