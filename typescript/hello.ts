@@ -2,6 +2,6 @@ function greater(person: String) {
     return "Helllo , " + person;
 }
 
-let user = "Minh Vu";
+let user = "Minh Hai Vu";
 
 document.body.textContent = greater(user);
