@@ -14,14 +14,21 @@ Be used to develop JS app for both cient-side and server-side. It can be invoked
 
 # Type system
 
+ #High levels
  - Program
  - Module
+ ##Custom types
  - Interface
- - CLass
+ - Class
  - Function
- - Variable
  - Enumeration
- - Scope
+ ##Primitive types
+ - number
+ - boolean
+ - string
+ - null, undefiled
+ - array, tuple
+ - any
 
 # Typescript Intergration
 
@@ -31,6 +38,6 @@ Be used to develop JS app for both cient-side and server-side. It can be invoked
 
  ## References ##
 
- - https://stackoverflow.com/questions/12694530/what-is-typescript-and-why-would-i-use-it-in-place-of-javascript/35048303#35048303
- - https://medium.com/@jtomaszewski/why-typescript-is-the-best-way-to-write-front-end-in-2019-feb855f9b164
+ - [What is Typescript @ stackoverflow](https://stackoverflow.com/questions/12694530/what-is-typescript-and-why-would-i-use-it-in-place-of-javascript/35048303#35048303)
+ - [What is Typescipt @ medium](https://medium.com/@jtomaszewski/why-typescript-is-the-best-way-to-write-front-end-in-2019-feb855f9b164)
 
