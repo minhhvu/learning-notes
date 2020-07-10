@@ -1,23 +1,6 @@
 /*
-  Custom Types
+  Function in Typescript
  */
-
-//Interface
-interface Ilogger { //interface
-
-}
-
-//Class
-class Logger { //class
-
-}
-
-//Enum
-enum Color {
-    red, green, blue
-}
-let c: Color = Color.blue;
-
 
 function warnUser(s: string): void { //void function
     console.log('Warning message:' + s)

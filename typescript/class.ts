@@ -1,0 +1,4 @@
+//Class
+class Logger { //class
+
+}
