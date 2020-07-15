@@ -46,28 +46,28 @@ class InternationalStudent extends Student{
 let mark = new InternationalStudent('Mark', 'China');
 mark.setBirthday(new Date());
 mark.print();
+//
+//
+// //Accessor
+// class Animal {
+//     private _type: string;
+//     get type(): string { return this._type}
+//     set type(t: string) { this._type = t};
+// }
+// let dog = new Animal();
+// dog.type = 'dog';
+// console.log(dog.type);
 
 
-//Accessor
-class Animal {
-    private _type: string;
-    get type(): string { return this._type}
-    set type(t: string) { this._type = t};
-}
-let dog = new Animal();
-dog.type = 'dog';
-console.log(dog.type);
-
-
-//Static properties
-class Circle {
-    static Pi = 3.14;
-    radius: number;
-    constructor (r? : number) {this.radius = r}
-    get area(): number {return 2* this.radius * Circle.Pi}
-}
-let circle = new Circle(4);
-console.log(circle.area);
+// //Static properties
+// class Circle {
+//     static Pi = 3.14;
+//     radius: number;
+//     constructor (r? : number) {this.radius = r}
+//     get area(): number {return 2* this.radius * Circle.Pi}
+// }
+// let circle = new Circle(4);
+// console.log(circle.area);
 
 
 //Abstract CLasses
