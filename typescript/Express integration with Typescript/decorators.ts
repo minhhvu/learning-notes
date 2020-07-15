@@ -11,15 +11,16 @@
     - Parameter Decorators
 
     Metadata
-
  */
 @classDecorator
 class User {
+    @trackName       //property decorator
     name: string;
     constructor(name=''){
         this.name = name
     }
 
+    @configurable(false)    //method decorator
     getName(): string {
         return this.name;
     }
@@ -30,5 +31,27 @@ class User {
 }
 
 function classDecorator(constructor: Function) {
+    console.log("\nClass Decorator")
     console.log(constructor)
+    Object.seal(constructor);       //preventing new properties from being added to it
+                                    // and marking all existing properties as non-configurable
+                                    //value can be still changed as long as they are writable
+    Object.seal(constructor.prototype);
+}
+
+function configurable(config: boolean) {        //Decorator factory
+    return function (target: any, propertyKey: string, desc: PropertyDescriptor) {
+        console.log('Method decorator')
+        console.log(target);        //User class object includes all methods
+        console.log(propertyKey);   //name of method that was wrapped
+        console.log(desc)           //property description of the method 
+        desc.configurable = config;
+    }
+}
+
+function trackName(target: any, key: string) {
+    console.log('Property Decorator')
+    console.log(target);
+    console.log(key);
+    console.log(target.key) // undefined because the property is not kept track on target object
 }
