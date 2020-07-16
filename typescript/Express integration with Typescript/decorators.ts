@@ -32,7 +32,7 @@ class User {
 
 function classDecorator(constructor: Function) {
     console.log("\nClass Decorator")
-    console.log(constructor)
+    console.log(constructor.prototype)
     Object.seal(constructor);       //preventing new properties from being added to it
                                     // and marking all existing properties as non-configurable
                                     //value can be still changed as long as they are writable
