@@ -1,7 +1,9 @@
-import {Response, Request, NextFunction} from "express";
+import {Response, Request, NextFunction, RequestHandler} from "express";
 import 'reflect-metadata';
 import {RouterMethod} from '../routes/RouterMethod';
 import {auth} from "../routes/auth";
+import {MethodInfo} from '../routes/auth'
+import bodyValidator from "./utils/bodyValidator";
 
 import express from 'express';
 var router = express.Router();
@@ -16,8 +18,11 @@ class AuthController {
         })
     }
 
-    @methodDecorator('/register', RouterMethod.post)
+    @methodDecorator('/register', RouterMethod.post, bodyValidator('email', 'name', 'password'))
+    // @middleware(bodyValidator('email', 'name', 'password'))
+    // @bodyValidator('email', 'name', 'password')
     register(req: Request, res: Response, next: NextFunction){
+        const {email, password, name} = req.body;
         //Validate the res.body properties
 
         //If it works well
@@ -28,8 +33,15 @@ class AuthController {
 }
 
 //@Desc: login controller with input of method and path
-function methodDecorator(path: string, method: RouterMethod) {
+function methodDecorator(path: string, method: RouterMethod, ...middlewares: RequestHandler[]) {
     return function (target: any, propertyKey: string, desc: PropertyDescriptor) {
-        Reflect.defineMetadata(propertyKey, {path, method}, target, propertyKey);
+        const methodInfor: MethodInfo = {
+            path,
+            method,
+            middlewares
+        }
+        Reflect.defineMetadata(propertyKey, methodInfor, target, propertyKey);
     }
 }
+
+
