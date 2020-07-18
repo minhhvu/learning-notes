@@ -1,15 +1,16 @@
-import {Response, Request, NextFunction, RequestHandler} from "express";
+import express, {NextFunction, Request, RequestHandler, Response} from "express";
 import 'reflect-metadata';
 import {RouterMethod} from '../routes/RouterMethod';
-import {auth} from "../routes/auth";
-import {MethodInfo} from '../routes/auth'
+import {auth, MethodInfo} from "../routes/auth";
 import bodyValidator from "./utils/bodyValidator";
 
-import express from 'express';
 var router = express.Router();
 
 @auth
 class AuthController {
+    @methodDecorator('', RouterMethod.use)
+    use: string | undefined;
+
     @methodDecorator('/login', RouterMethod.get)
     login(req: Request, res: Response, next: NextFunction){
         res.status(200).json({
@@ -34,13 +35,19 @@ class AuthController {
 
 //@Desc: login controller with input of method and path
 function methodDecorator(path: string, method: RouterMethod, ...middlewares: RequestHandler[]) {
-    return function (target: any, propertyKey: string, desc: PropertyDescriptor) {
+    return function (target: any, propertyKey: string, desc?: PropertyDescriptor) {
         const methodInfor: MethodInfo = {
             path,
             method,
             middlewares
         }
         Reflect.defineMetadata(propertyKey, methodInfor, target, propertyKey);
+    }
+}
+
+function route(routePrefix: string) {
+    return function (target: any, key: string) {
+        Reflect.defineMetadata('route', routePrefix, target)
     }
 }
 

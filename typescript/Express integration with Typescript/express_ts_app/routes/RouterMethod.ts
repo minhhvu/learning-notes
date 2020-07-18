@@ -3,5 +3,6 @@ export enum RouterMethod {
     post = 'post',
     del = 'delete',
     put = 'put',
-    patch = 'patch'
+    patch = 'patch',
+    use = 'use'
 }
