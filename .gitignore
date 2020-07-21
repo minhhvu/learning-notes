@@ -1,3 +1,4 @@
 # Don't track content of these folders
 /typescript/Express integration with Typescript/node_modules/
 /typescript/Express integration with Typescript/express_ts_app/node_modules/
+/typescript/React Redux integration with Typescript/react_ts_app/node_modules/
