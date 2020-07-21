@@ -1,11 +1,12 @@
-import React, {FunctionComponent} from "react";
+import React, {ChangeEvent, FunctionComponent, SyntheticEvent} from "react";
+import {InputType} from "zlib";
 
 export interface FilterProps {
     isChecked: boolean,
     setIsChecked: any
 }
 export const Filter: FunctionComponent<FilterProps> = (props:FilterProps): JSX.Element => {
-    const handleOnchange = (event: any): void => {
+    const handleOnchange = (event: ChangeEvent<HTMLInputElement>): void => {
         props.setIsChecked(event.target.checked)
     }
     return (

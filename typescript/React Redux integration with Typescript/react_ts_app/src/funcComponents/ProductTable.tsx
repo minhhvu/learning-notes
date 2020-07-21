@@ -47,8 +47,6 @@ const ProductTable: FunctionComponent<ProductTableProps> = (props: ProductTableP
                     </tr>
                 ))
             }
-            {/*<Category name={CategoryEnum.sporting}></Category>*/}
-            {/*<Category name={CategoryEnum.electronics}></Category>*/}
         </table>
     )
 }
