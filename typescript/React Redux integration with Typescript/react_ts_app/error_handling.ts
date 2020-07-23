@@ -14,11 +14,13 @@
 //Response object shape
 import {Reducer} from "redux";
 
+type ErrorResponse = string | string[];
+
 interface ResponseObject<T>{
     isFetching: boolean,
     data?: T | T[],
     // message?: string | string[],
-    errors?: string | string[]
+    errors?: ErrorResponse
 }
 
 interface Action {
@@ -35,7 +37,17 @@ type ActionState = ResponseObject<Action>;
 
 
 //Action Creator
-
+const fetchSuccess = (data: Action) => ({
+    type: ActionTypes.FETCH_SUCCESS,
+    data,
+})
+const fetchRequest = () => ({
+    type: ActionTypes.FETCH_REQUEST,
+})
+const fetchError = (errors: ErrorResponse) => ({
+    type: ActionTypes.FETCH_ERROR,
+    errors
+})
 
 //Error Reducer
 const initialState: ActionState = {
