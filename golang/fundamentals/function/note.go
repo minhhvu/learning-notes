@@ -27,4 +27,8 @@ func main() {
 
 	//Recursion function
 	fmt.Println("fibonaci at n = 10:\n", ultility.Fibonaci(10))
+
+	//Multiple return values
+	a, b := ultility.FirstTwoElements([]int{2, 3, 5})
+	fmt.Println(a, b)
 }
