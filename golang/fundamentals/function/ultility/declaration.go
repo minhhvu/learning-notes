@@ -15,3 +15,4 @@ func Sub(x, y int) (z int) { z = x - y; return }
 
 //Zero always return 0
 func Zero(int, int) int { return 0 }
+
