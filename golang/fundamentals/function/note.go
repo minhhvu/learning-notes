@@ -46,4 +46,8 @@ func main() {
 	fmt.Println(anonymousF())	//return 2
 	fmt.Println(anonymousF())	//return 3
 	fmt.Println(anonymousF())	//return 4
+
+
+	//Variadic function
+	fmt.Println(ultility.VariadicFunction(2, 3, 5, 4))
 }
