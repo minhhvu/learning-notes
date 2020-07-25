@@ -40,4 +40,10 @@ func main() {
 		return a*b
 	}
 	fmt.Println(ultility.FunctionAsParameter(multiple))
+
+	//Anonymous function 
+	anonymousF := ultility.Counter;
+	fmt.Println(anonymousF())	//return 2
+	fmt.Println(anonymousF())	//return 3
+	fmt.Println(anonymousF())	//return 4
 }
