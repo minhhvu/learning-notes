@@ -50,4 +50,8 @@ func main() {
 
 	//Variadic function
 	fmt.Println(ultility.VariadicFunction(2, 3, 5, 4))
+
+
+	//Deferred func call
+	ultility.DeferredFunctionCall();
 }
