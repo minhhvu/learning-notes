@@ -4,9 +4,17 @@ package main
 	Struct  is a collection of fields.
 	When a parameter has the type of a struct, it will be passed by value.
 	To compare to Javascript, it works like the construction of class
+
+	- define a struct
+	- declare a variable with the struct
+	- access to the struct field
+	- pass by value
+	- pass by reference
+	- import a struct from another package
 */
 
 import "fmt"
+import "./pkg"
 
 //Define a struct
 type address struct {
@@ -70,4 +78,9 @@ func main() {
 	minhRef.updateAddress(newAdd)
 	minh.updateAddress(newAdd)		//shortcut to the method with pointer
 	print(minh)
+
+
+	//Imported struct from another struct
+	type point = pkg.Point 
+
 }
